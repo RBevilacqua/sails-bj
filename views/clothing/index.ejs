@@ -1,0 +1,29 @@
+<div class="container" style="margin-top: 100px;">
+	<div class="jumbotron">
+		<form action="/clothing/search" method="post" class="form-signin">
+			<h2 class="form-signin-heading">Search Clothing Types</h2>
+			<div class="control-group">
+				<input type="text" class="form-control" placeholder="Nombre" name="name"/>
+			</div>
+			<% if(result != "undefined") { %>
+				<span><br><div class="container"><p><% for (index in result) {
+						if (result[index].attr != '') {
+							if (result[index].attr == 'Bold') { %>
+								<strong> <%= result[index].name %> </strong>
+							<% } else { %>
+								<i><%= result[index].name %></i>
+						<%	}
+						} else { %>
+							<%= result[index].name %>
+						<% }
+						} %></p></div></span>
+			<% } %>
+			<div class="control-group">
+				<input type="submit" class="btn btn-md btn-primary btn-block" value="Search"/>
+				<input type="hidden" name="_csrf" value="<%= _csrf %>"/>
+			</div>
+		</form>
+	</div>
+</div>
+
+
