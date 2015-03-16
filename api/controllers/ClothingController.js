@@ -43,7 +43,7 @@ module.exports = {
 									}
 								});
 								return callback(null, arrayObj);
-                                console.log("hola");
+                                console.log("ahora soy robe");
 							}
 					], function (err, one) {
 							return callback(err,one);
