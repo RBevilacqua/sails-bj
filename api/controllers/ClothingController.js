@@ -43,6 +43,7 @@ module.exports = {
 									}
 								});
 								return callback(null, arrayObj);
+                                console.log("hola");
 							}
 					], function (err, one) {
 							return callback(err,one);
